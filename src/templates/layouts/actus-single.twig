@@ -1,0 +1,42 @@
+{% extends 'base.twig' %}
+{% block content %}
+
+<main class="view {{ body_class }}">
+
+    <section class="ly single-content">
+        <div class="container grid col-8">
+
+            <div class="sommaire-container w-2">
+                <div class="sommaire">
+                    <div class="head">
+                        <h3>Sommaire</h3>
+                        <div class="toggle-btn"></div>
+                    </div>
+                    <div class="anchors"></div>
+                </div>
+                <div class="share">
+                    <h4>Partager</h4>
+                    <div class="share-link">
+                        <a id="facebook" title="Partager sur Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{page.link}}" target="_blank">Facebook</a>
+                    </div>
+                    <div class="share-link">
+                        <a id="email" title="Partager par email" href="mailto:?subject= {{ page.title }} &amp;body= Un article qui pourrait t'intéresser : {{ page.link }}" target="_blank">Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-container w-5 s-4">
+                <div class="content-section">
+                    {{ page.content_output }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% set datas = page.get_field('news') %}
+    {% if datas.display and posts_associes|length > 0 %}
+        {% include 's-news.twig' with {datas : datas, posts : posts_associes, class : 'single-related'} %}
+    {% endif %}
+</main>
+
+{% endblock content %}

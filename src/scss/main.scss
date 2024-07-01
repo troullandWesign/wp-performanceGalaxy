@@ -1,0 +1,28 @@
+/*!
+Author: Thomas Roulland
+Author URI: http://jaipasdesite.fr
+*/
+
+// Settings
+@import 'settings/variables';
+@import 'settings/media';
+
+// Generic
+@import 'generic/normalize';
+@import 'generic/fonts';
+@import 'generic/base';
+@import 'generic/grid';
+@import 'generic/typographie';
+@import 'generic/spacing';
+
+// Components
+@import 'components/components';
+@import 'components/footer';
+@import 'components/forms';
+@import 'components/header';
+@import 'components/layouts';
+@import 'components/menu';
+
+// Pages
+@import 'pages/home';
+@import 'pages/404';

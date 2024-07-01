@@ -1,0 +1,73 @@
+* {
+    box-sizing:                  border-box;
+    -moz-font-feature-settings:  'liga' on;
+    -webkit-font-smoothing:      antialiased;
+    -moz-osx-font-smoothing:     grayscale;
+    margin:                      0;
+    padding:                     0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-rendering:              optimizeLegibility;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    color:       $color-primary;
+    font-family: $font-secondary;
+    font-size:   1em;
+
+    //Specifiy header height
+    //for view's padding if needed
+    /*--topbar-height: 80px;
+	@include min(md){
+		--topbar-height: 94px;
+	}
+	@include min(xl){
+		--topbar-height: 130px;
+	}
+	@include min(xxl){
+		--topbar-height: 149px;
+	}*/
+}
+
+/*.view{
+    padding-top: var(--topbar-height);
+}*/
+
+::selection {
+    background-color: $color-primary;
+    color:            white;
+}
+
+ul {
+    list-style: none;
+    margin:     0;
+    padding:    0;
+}
+
+p,
+span,
+a,
+li {
+    color:       $color-primary;
+    font-size:   1rem;
+    line-height: 1.5em;
+}
+
+a {
+    color:           $color-primary;
+    text-decoration: none;
+}
+
+.img-wrap{
+    position: relative;
+    display: flex;
+
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}

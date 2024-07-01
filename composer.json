@@ -1,0 +1,60 @@
+{
+    "name": "wesign/wp-starter",
+    "description": "Wordpress theme starter ",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "Thomas ROULLAND",
+            "email": "roulland.thomass@gmail.com"
+        }
+    ],
+    "scripts": {
+        "post-install-cmd": "bash cli/autoloader.sh",
+        "install:prod": "./cli/install-prod.sh"
+    },
+    "autoload": {
+        "psr-4": {
+            "WS_2020\\": "dist/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "advanced-custom-fields/advanced-custom-fields-pro",
+                "version": "6.0.3",
+                "type": "wordpress-muplugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k=b3JkZXJfaWQ9MTczODYzfHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxOS0xMC0yOCAxNDoxNToxNQ=="
+                },
+                "require": {
+                    "composer/installers": "^2.2.0",
+                    "ffraenz/private-composer-installer": "^5.0.1"
+                }
+            }
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "../../mu-plugins/{$name}/": ["type:wordpress-plugin", "type:wordpress-muplugin", "wpackagist-plugin/*"]
+        }
+    },
+    "require": {
+        "timber/timber": "^1.22.1",
+        "advanced-custom-fields/advanced-custom-fields-pro": "^6.0.3",
+        "wpackagist-plugin/google-site-kit": "*",
+        "wpackagist-plugin/wordpress-seo": "*",
+        "wpackagist-plugin/simple-custom-post-order": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "ffraenz/private-composer-installer": true,
+            "composer/installers": true
+        }
+    }
+}

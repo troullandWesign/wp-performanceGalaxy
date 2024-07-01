@@ -1,0 +1,22 @@
+.preloader {
+    align-items:     center;
+    background:      white;
+    display:         flex;
+    flex-flow:       wrap column;
+    height:          100%;
+    justify-content: center;
+    left:            0;
+    position:        fixed;
+    top:             0;
+    width:           100%;
+    z-index:         9999;
+
+    .preloader__logotype {
+        opacity:   0;
+        transform: scale(0.85);
+        width: 	   120px;
+
+        @include min(sm) { width: 180px }
+        @include min(md) { width: 220px }
+    }
+}

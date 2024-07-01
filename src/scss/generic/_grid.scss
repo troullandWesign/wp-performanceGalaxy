@@ -1,0 +1,67 @@
+//Main layout
+.ly {
+    display: grid;
+    grid-template-columns: [gutter-l] 1fr [container] 85% [gutter-r] 1fr;
+}
+
+//Containers
+.container {
+    grid-column: container;
+     &-semi {
+        &-l { grid-column: container; }
+        &-r { grid-column: container; }
+    }
+    &-full { grid-column: 1 / 4; }
+
+    @include min(lg) {
+        &-semi {
+            &-l { grid-column: 1 / 3; }
+            &-r { grid-column: 2 / 4; }
+        }
+    }
+}
+
+//Grid columns
+.grid{
+    display: grid;
+    grid-template-columns: repeat($nbCol, minmax(0, 1fr));
+    grid-template-rows: minmax(0, auto);
+    width: 100%;
+}
+
+$prefixs: 'col-', 's-', 'w-';
+@mixin colCreate($prefix) {
+    @for $i from 1 through $nbCol {
+        .#{$prefix}#{$i} { @content($i) }
+    }
+
+    @each $size, $value in $breakpoints {
+        @if $size != def {
+            @include min($size){
+                @for $i from 1 through $nbCol {
+                    .#{$prefix}#{$size}-#{$i} { @content($i) }
+                }
+            }
+        }
+    }
+}
+
+@each $prefix in $prefixs {
+    @include colCreate($prefix) using ($i) {
+        @if  $prefix == col- {
+            grid-template-columns: repeat($i, minmax(0, 1fr));
+        }@else if $prefix == s-{
+            grid-column-start: $i;
+        }@else if $prefix == w- {
+            grid-column-end: span $i;
+        }
+    }
+}
+
+div[class^="g-br"] {
+    grid-column-start: 1;
+
+    @each $size, $value in $breakpoints {
+        &.g-br-#{$size} { grid-column-start: 1; }
+    }
+}
