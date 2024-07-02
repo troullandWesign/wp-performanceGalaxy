@@ -1,10 +1,16 @@
-<picture class="img-wrap {{ class ? class }}" id="{{ id ? id }}">
+<picture class="img-wrap {{ class ? class }} {{ para ? 'para' }}" {{ id ? 'id="' ~ id ~ '"' }} {{ para ? 'data-scroll data-scroll-speed="0"' }}>
     {% set src = url ? url : image.url %}
+    {% if image %}
+        {% if width is not defined %}{% set width = image.width %}{% endif %}
+        {% if height is not defined %}{% set height = image.height %}{% endif %}
+    {% endif %}
+    
+
     {% set webp_src = width is defined or height is defined ? (width and height ? src|resize(width, height)|towebp : (width ? src|resize(width)|towebp : src|resize(0, height)|towebp)) : src|towebp %}
     {% set jpg_src = width is defined or height is defined ? (width and height ? src|resize(width, height)|tojpg : (width ? src|resize(width)|tojpg : src|resize(0, height)|tojpg)) : src|tojpg %}
     {% set default_src = width is defined or height is defined ? (width and height ? src|resize(width, height) : (width ? src|resize(width) : src|resize(0, height))) : src %}
 
     <source srcset="{{ webp_src }}" type="image/webp">
     <source srcset="{{ jpg_src }}" type="image/jpeg">
-    <img src="{{ default_src }}" alt="{{ alt ? alt : image.alt }}" loading="lazy">
+    <img src="{{ default_src }}" alt="{{ alt ? alt : image.alt }}" loading="lazy" {{ para ? 'data-scroll data-scroll-speed="-.1"' }} {{ width ? 'width="' ~ width ~ '"' }} {{ height ? 'height="' ~ height ~ '"' }} >
 </picture>

@@ -1,1 +1,30 @@
-// Code here ..
+.test-loco {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    .items {
+        justify-content: center;
+        display: flex;
+        gap: 30px;
+    }
+}
+
+section.entry {
+    color : pink;
+    //height: 100vh;
+}
+
+section.locomtiv {
+    .container {
+        margin-bottom: 50px;
+        img {
+            width: 350px;
+        }
+        
+    }
+}
+
+
+
+
