@@ -1,3 +1,11 @@
 .site-footer {
-    
+    background-color: $light;
+    .container {
+        display: grid;
+        grid-template-columns: 35% 10% repeat(2, 1fr) 20%; 
+        .main-item {
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+    }
 }

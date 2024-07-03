@@ -281,8 +281,9 @@ class WS_Starter extends TimberSite {
     */
    public function custom_menus() {
       register_nav_menu('menu-main', __('Menu Principal'));
-      /*register_nav_menu('menu-open', __('Menu Open'));
-      register_nav_menu('menu-footer', __('Menu Footer'));*/
+      /*register_nav_menu('menu-open', __('Menu Open'));*/
+      register_nav_menu('menu-footer', __('Menu Footer'));
+      register_nav_menu('menu-footer2', __('Menu Footer 2'));
    }
 
 
@@ -293,6 +294,8 @@ class WS_Starter extends TimberSite {
    public function add_to_context($context) {
       $context['site'] = $this;
       $context['menu_main'] = new TimberMenu('menu-main');
+      $context['menu_footer'] = new TimberMenu('menu-footer');
+      $context['menu_footer_two'] = new TimberMenu('menu-footer2');
       /*$context['menu_open'] = new TimberMenu('menu-open');
       $context['menu_footer'] = new TimberMenu('menu-footer');*/
       $context['options'] = get_fields('option');

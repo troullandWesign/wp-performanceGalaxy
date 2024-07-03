@@ -11,5 +11,21 @@
     font-family: 'Montserrat';
     font-style:   normal;
     font-weight:  500;
+    src: url('#{$path-fonts}/Montserrat-Medium.ttf') format('truetype'),
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style:   normal;
+    font-weight:  400;
     src: url('#{$path-fonts}/Montserrat-Regular.ttf') format('truetype'),
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Montserrat';
+    font-style:   normal;
+    font-weight:  700;
+    src: url('#{$path-fonts}/Montserrat-Bold.ttf') format('truetype'),
 }

@@ -1,0 +1,12 @@
+.btn {
+    padding: 10px;
+    text-align: center;
+    font-family: $font-primary;
+    border: none;
+    border-radius: 10px;
+
+    &-black {
+        background-color: $black;
+        color: $color-primary;
+    }
+}

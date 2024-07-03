@@ -1,5 +1,36 @@
 		<footer class="site-footer ly">
-			footer2
+			<div class="container">
+				<div class="newsletter">
+					<p>Envie d'être à jour ?</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+					<form action="">
+						<input type="text" placeholder="S'abonnez à la newsletter">
+					</form>
+				</div>
+				<div class="meteores">
+					
+				</div>
+				<div class="menu-left">
+					<p class="main-item">Nos services</p>
+					<ul>
+						{% for item in menu_footer.items %}
+							<li><a href="{{ item.url }}">{{ item.name }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="menu-right">
+					<p class="main-item">Nos services</p>
+					<ul>
+						{% for item in menu_footer_two.items %}
+							<li><a href="{{ item.url }}">{{ item.name }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="contact">
+					<p class="main-item">Nous contacter</p>
+					<a href="#" class="btn btn-black">Nous contacter</a>
+				</div>
+			</div>
 		</footer>
 	
 		<!-- JS -->
