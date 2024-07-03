@@ -1,1 +1,112 @@
 // banner
+.banner {
+    height: 100vh;
+    // background-image: url('~/images/grid_pattern.svg') center center/cover;
+
+    .left {
+        align-content: center;
+
+        .left-content {
+            display: flex;
+            height: 50%;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .text {
+                // h1 {
+                //     font-size: 3rem;
+                //     font-family: $font-primary;
+                //     font-weight: bold;
+                // }
+
+                p {
+                    font-size: 2rem;
+                    font-family: $font-secondary;
+                    color: $grey;
+                    margin: 2rem 0;
+                    // font-weight: semibold;
+                }
+
+            }
+
+            .buttons {
+                display: flex;
+                gap: 3rem;
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .right-content {
+            height: 50%;
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            // overflow: hidden;
+
+            .photo {
+                height: 100%;
+                justify-content: right;
+                position: relative;
+
+                &.img-wrap {
+                    overflow: visible;
+                    display: block;
+                }
+
+                &::before {
+                    content: url('#{$path-images}/talking_arrow.svg');
+                    position: absolute;
+                    top: 75px;
+                    right: 90%;
+                    height: 200px;
+                    // background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, #FFFFFF 100%);
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 300px;
+                    background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, #FFFFFF 100%);
+                }
+
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+
+            p {
+                font-size: 1.3rem;
+                font-family: $font-secondary;
+                margin: 2rem 0;
+            }
+        }
+
+        /* Rectangle 7293 */
+
+
+    }
+
+    .grid_pattern {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        opacity: 0.4;
+
+        picture {
+            img {
+                height: 100vh;
+            }
+        }
+    }
+
+
+}
