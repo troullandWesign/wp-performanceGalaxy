@@ -10,3 +10,24 @@
         color: $color-primary;
     }
 }
+
+input {
+    border: 1px solid $black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.title-big {
+    font-size: 60px;
+    font-family: $font-primary;
+}
+
+.title-medium {
+    font-size: 40px;
+    font-family: $font-primary;
+}
+
+.title-small {
+    font-size: 32px;
+    font-family: $font-primary;
+}

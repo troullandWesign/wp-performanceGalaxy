@@ -1,7 +1,7 @@
 		<footer class="site-footer ly">
 			<div class="container grid">
 				<div class="newsletter w-4">
-					<p>Envie d'être à jour ?</p>
+					<p class="title-big">Envie d'être à jour ?</p>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 					<form action="">
 						<input type="text" placeholder="S'abonnez à la newsletter">
@@ -28,7 +28,31 @@
 				<div class="contact w-2 s-11">
 					<p class="main-item">Nous contacter</p>
 					<a href="#" class="btn btn-black">Nous contacter</a>
+					<p class="phone">02 31 08 44 82</p>
+					<p>Av. de la libération,<br>14230 le ponto</p>
+					<div class="reseaux">
+						{% include "img_webp.twig" with {
+							url: site.theme.path ~ '/images/icons/Facebook.png', 
+						} %}
+						{% include "img_webp.twig" with {
+							url: site.theme.path ~ '/images/icons/Instagram.png', 
+						} %}
+						{% include "img_webp.twig" with {
+							url: site.theme.path ~ '/images/icons/Linkedin.png', 
+						} %}
+					</div>
+						
+						
 				</div>
+			</div>
+			<div class="container full-font">
+				{% include "img_webp.twig" with {
+					url: site.theme.path ~ '/images/icons/full-font.png', 
+				}%}
+			</div>
+			<div class="container mentions">
+				<p>@2024 - Performance Galaxy. Tout droits réservés - Mentions légales</p>
+				<p>My Digital School MDFS 1</p>
 			</div>
 		</footer>
 	

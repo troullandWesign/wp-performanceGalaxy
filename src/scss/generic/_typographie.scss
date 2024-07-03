@@ -1,0 +1,21 @@
+@mixin fluid-size($min-font-size: 12px, $max-font-size: 21px, $lower-range: 375px, $upper-range: 1920px) {
+	font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+
+	@media screen and (max-width: $lower-range) {
+		font-size: $min-font-size;
+	}
+	@media screen and (min-width: $upper-range){
+		font-size: $max-font-size;
+	}
+}
+
+@mixin fluid-lspace($min-letter-spacing: 12px, $max-letter-spacing: 21px, $lower-range: 375px, $upper-range: 1920px) {
+	letter-spacing: calc(#{$min-letter-spacing} + #{(($max-letter-spacing / ($max-letter-spacing * 0 + 1)) - ($min-letter-spacing / ($min-letter-spacing * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+
+	@media screen and (max-width: $lower-range) {
+		letter-spacing: $min-letter-spacing;
+	}
+	@media screen and (min-width: $upper-range){
+		letter-spacing: $max-letter-spacing;
+	}
+}
