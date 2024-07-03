@@ -1,21 +1,17 @@
-main{
-    section{
+main {
+    section {
         margin-bottom: 100px;
 
-        @include min(xl){
+        @include min(xl) {
             margin-bottom: 150px;
         }
 
-        &:last-of-type{
+        &:last-of-type {
             margin-bottom: 0;
         }
 
-        &.has-bg{
+        &.has-bg {
             background: $color-secondary;
-        }
-
-        &:nth-child(1){
-            padding-top: 165px;
         }
     }
 }

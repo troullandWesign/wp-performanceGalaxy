@@ -3,7 +3,8 @@
 
 <div data-barba="wrapper">
     <main class="view {{ body_class }}" data-barba="container" data-barba-namespace="home" data-scroll-container>
-        <div style="height: 25vh;">
+    {% include "banner.twig" %}
+        {# <div style="height: 25vh;">
             <div>
                 <h1>Hello 👋</h1>
             </div>
@@ -32,14 +33,14 @@
             </div>
         </section>
         {# Exemple grid, initaliser le parent avec ly pour lui mettre la grid puis mettre un container #}
-        <section class="ly"> 
+        {# <section class="ly"> 
             <div class="container grid">
             {# Si on veut utiliser les colonnes il faut mettre la classe grid avec container, 
-            on peut faire start des elements avec ws-5, pour commencer a la colonne 5 #}
+            on peut faire start des elements avec ws-5, pour commencer a la colonne 5 
                 <div class="w-12">50%</div>
                 <div class="w-12">50%</div>
             </div>
-        </section>
+        </section>  #}
     </main>
 </div>
 

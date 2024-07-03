@@ -29,32 +29,32 @@
 
     <body class="" data-barba="wrapper">
 
-        <header class="site-header">
-            {# Logo #}
-            <a href="{{ site.url }}" class="site-logo">
-                {# <img src="{{ site.theme.path ~ '/images/logo.svg' }}" alt="{{ site.name }}"> #}
-                {{ site.name }}
-            </a>
-
-            {# Navigation #}
-            <nav class="site-nav">
-                <ul>
-                    {# {% for item in menu_main.items %}
-                        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
-                    {% endfor %} #}
-
-                    
-
-                </ul>
-            </nav>
-
-            {# Mobile Navigation #}
-            <button class="site-nav-toggle" aria-label="Toggle Navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            {# Contact Button #}
-            <a href="{{ site.url }}/contact" class="site-contact">Contact</a>
+        <header class="site-header ly">
+            <div class="container">
+                {# Logo #}
+                <a href="{{ site.url }}" class="site-logo">
+                    {# <img src="{{ site.theme.path ~ '/images/logo.svg' }}" alt="{{ site.name }}"> #}
+                    Logo
+                </a>
+                {# Navigation #}
+                <nav class="site-nav">
+                    <ul>
+                        {# {% for item in menu_main.items %}
+                            <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+                        {% endfor %} #}
+                        <li><a href="#">Nos services</a></li>
+                        <li><a href="#">Actualités</a></li>
+                        <li><a href="#">Nos partenaires</a></li>
+                        <li><a href="#">Qui sommes-nous ?</a></li>
+                    </ul>
+                </nav>
+                {# Mobile Navigation #}
+                {# <button class="site-nav-toggle" aria-label="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button> #}
+                {# Contact Button #}
+                <a href="{{ site.url }}/contact" class="site-contact btn btn-black">Contact</a>
+            </div>
         </header>
