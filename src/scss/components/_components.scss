@@ -17,8 +17,26 @@ input {
     padding: 10px;
 }
 
+.input-container {
+    position: relative;
+    display: inline-block;
+
+    input[type="text"] {
+        padding-right: 30px; /* Adjust this value based on the SVG size */
+        box-sizing: border-box;
+    }
+
+    svg {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg);
+        pointer-events: none; 
+    }
+}
+
 .title-big {
-    font-size: 60px;
+    @include fluid-size(35px, 60px, 1200px, 1920px);
     font-family: $font-primary;
 }
 
