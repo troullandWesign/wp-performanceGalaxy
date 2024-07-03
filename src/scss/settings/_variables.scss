@@ -12,7 +12,7 @@ $black : #1A1A1A;
 /* ------------ */
 /* --- Path --- */
 /* ------------ */
-$path-development: 'http://perfomancegalaxy.local/#{$site-folder-path}/wp-content/themes/#{$theme-folder-name}/dist';
+$path-development: 'http://perfomancegalaxy.local/wp-content/themes/#{$theme-folder-name}/dist';
 $path-production:  '/wp-content/themes/#{$theme-folder-name}/dist';
 
 $path-assets: if($env == 'development', #{$path-development}, #{$path-production});
@@ -24,8 +24,8 @@ $path-images: '#{$path-assets}/images';
 /* ------------- */
 /* --- Fonts --- */
 /* ------------- */
-$font-primary:   'FONT_NAME', sans-serif;
-$font-secondary: 'FONT_NAME', sans-serif;
+$font-primary:   'Audiowide', sans-serif;
+$font-secondary: 'Montserrat', sans-serif;
 
 
 /* -------------- */
