@@ -13,8 +13,8 @@ $black : #1A1A1A;
 /* ------------ */
 /* --- Path --- */
 /* ------------ */
-// $path-development: 'http://perfomancegalaxy.local/wp-content/themes/#{$theme-folder-name}/dist';
-$path-development: 'http://performance-galaxy.com/wp-content/themes/#{$theme-folder-name}/dist';
+$path-development: 'http://perfomancegalaxy.local/wp-content/themes/#{$theme-folder-name}/dist';
+//$path-development: 'http://performance-galaxy.com/wp-content/themes/#{$theme-folder-name}/dist';
 $path-production: '/wp-content/themes/#{$theme-folder-name}/dist';
 
 $path-assets: if($env =='development', #{$path-development}, #{$path-production});

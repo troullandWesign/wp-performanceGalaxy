@@ -109,4 +109,69 @@
     }
 
 
+}section.about {
+    padding-bottom: 50px;
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        .left {
+            height: 100%;
+            picture {
+                height: 100%;
+                border-radius: 30px;
+                img {
+                    object-fit: cover;
+                }
+            }
+        }
+        .right {
+            .content {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+section.abonnements {
+    .container {
+        .listing-abonnements {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .content {
+                height: 28rem;
+                width: 25rem;
+                background-color: #1b1f2a;
+                border: .2rem solid rgba(255,255,255,.1);
+                border-radius: .7rem;
+                border-bottom: .4rem solid #0099ff;
+                border-top: .4rem solid #0099ff;
+                overflow: hidden;
+                /* padding: .2rem; */
+                img{
+                    width: 100%;
+                    border-bottom-left-radius: .6rem;
+                    border-bottom-right-radius: .6rem;
+                }
+                .text-content{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    h3{
+                        font-size: 1.7rem;
+                        font-weight: 500;
+                    }
+                    p{
+                        max-width: 22rem;
+                        font-size: .8rem;
+                        font-weight: 400;
+                        text-align: center;
+                    }
+                }
+            }
+
+        }
+    }
 }

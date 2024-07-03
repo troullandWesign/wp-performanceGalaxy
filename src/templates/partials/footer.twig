@@ -1,10 +1,18 @@
 		<footer class="site-footer ly">
 			<div class="container grid">
-				<div class="newsletter w-4">
-					<p class="title-big">Envie d'être à jour ?</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+				<div class="newsletter w-5">
+					<div class="title-big">
+						<p>Envie d'être à jour ?</p>
+					</div>
+					<p class="text-news">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 					<form action="">
-						<input type="text" placeholder="S'abonnez à la newsletter">
+						<div class="input-container">
+							<input type="text" placeholder="S'abonnez à la newsletter">
+							<svg class="arrow-icon" width="24" height="24" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M40.0388 13.1699L40.0427 38.963M40.0427 39.0001L40.0427 67.0001" stroke="#1A1A1A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M12 39.0002L36.2877 14.7125C38.3379 12.6622 41.6621 12.6622 43.7123 14.7125L68 39.0002" stroke="#1A1A1A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</div>
 					</form>
 				</div>
 				<div class="meteores">
@@ -28,8 +36,10 @@
 				<div class="contact w-2 s-11">
 					<p class="main-item">Nous contacter</p>
 					<a href="#" class="btn btn-black">Nous contacter</a>
-					<p class="phone">02 31 08 44 82</p>
-					<p>Av. de la libération,<br>14230 le ponto</p>
+					<p class="phone">
+						02 31 08 44 82<br>
+						Av. de la libération,<br>14230 le ponto
+					</p>
 					<div class="reseaux">
 						{% include "img_webp.twig" with {
 							url: site.theme.path ~ '/images/icons/Facebook.png', 
@@ -57,6 +67,8 @@
 		</footer>
 	
 		<!-- JS -->
+		<!-- Swiper JS -->
+  		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script>
 			window.APP = window.APP || {}
 			APP.BASE_URL = "{{ site.url }}"

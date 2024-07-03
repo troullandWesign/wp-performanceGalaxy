@@ -34,17 +34,42 @@ input {
     padding: 10px;
 }
 
+.input-container {
+    position: relative;
+    display: inline-block;
+
+    input[type="text"] {
+        padding-right: 30px; /* Adjust this value based on the SVG size */
+        box-sizing: border-box;
+    }
+
+    svg {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg);
+        pointer-events: none; 
+    }
+}
+
 .title-big {
-    font-size: 60px;
-    font-family: $font-primary;
+    * {
+        @include fluid-size(35px, 60px, 1200px, 1920px);
+        font-family: $font-primary; 
+    }
 }
 
 .title-medium {
-    font-size: 40px;
-    font-family: $font-primary;
+    * {
+        font-size: 40px;
+        font-family: $font-primary;
+    }
 }
 
 .title-small {
-    font-size: 32px;
-    font-family: $font-primary;
+    * {
+        font-size: 30px;
+        font-family: $font-primary;
+        margin-bottom: 40px;
+    }
 }
