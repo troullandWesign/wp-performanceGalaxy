@@ -1,0 +1,50 @@
+section.contact {
+    margin-top: 175px;
+    padding-bottom: 100px;
+    h1 {
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    form {
+        border-radius: 54px;
+        padding: 20px 50px;
+        border: 1px solid $light;
+        display: grid;
+        grid-template-columns: 47.5% 1fr 47.5%;
+        gap: 40px;
+        align-items: center;
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-right: 40px;
+
+            .title-left {
+                font-family: $font-secondary;
+                font-weight: 700;
+                font-size: 40px;
+            }
+        }
+    
+        .separator {
+            border: 1px solid black;
+            height: 300px;
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-height: 400px;
+            .icons {
+                .icon {
+                    margin-bottom: 10px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
