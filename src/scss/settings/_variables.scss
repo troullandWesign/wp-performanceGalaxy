@@ -1,7 +1,7 @@
 /* -------------- */
 /* --- Colors --- */
 /* -------------- */
-$color-primary: #F9F4F7;
+$color-primary:   #F9F4F7;
 $color-secondary: #113677;
 $color-third : #00616C;
 $grey : #A8A8A8;
@@ -12,8 +12,8 @@ $black : #1A1A1A;
 /* ------------ */
 /* --- Path --- */
 /* ------------ */
-$path-development: 'http://performance-galaxy.com/#{$site-folder-path}/wp-content/themes/#{$theme-folder-name}/dist';
-$path-production: '/wp-content/themes/#{$theme-folder-name}/dist';
+$path-development: 'http://perfomancegalaxy.local/wp-content/themes/#{$theme-folder-name}/dist';
+$path-production:  '/wp-content/themes/#{$theme-folder-name}/dist';
 
 $path-assets: if($env =='development', #{$path-development}, #{$path-production});
 $path-fonts: '#{$path-assets}/fonts';
@@ -24,8 +24,8 @@ $path-images: '#{$path-assets}/images';
 /* ------------- */
 /* --- Fonts --- */
 /* ------------- */
-$font-primary: 'FONT_NAME', sans-serif;
-$font-secondary: 'FONT_NAME', sans-serif;
+$font-primary:   'Audiowide', sans-serif;
+$font-secondary: 'Montserrat', sans-serif;
 
 
 /* -------------- */
