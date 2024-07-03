@@ -1,6 +1,7 @@
-node_modules
 dist
 vendor
+node_modules
 
+webpack.dev.js
 .DS_Store
 */.DS_Store

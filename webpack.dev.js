@@ -9,7 +9,7 @@ module.exports = merge(Common(false), {
   devtool: 'inline-source-map',
   plugins: [
     new BrowserSyncPlugin({
-      proxy: 'http://perfomance-galaxy.com',
+      proxy: 'http://perfomancegalaxy.local',
       notify: false,
       open: true
     }),
