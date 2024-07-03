@@ -6,6 +6,7 @@ class home {
 
 	afterEnter = data => {
 		console.log('Home.js');
+		
 	};
 }
 
