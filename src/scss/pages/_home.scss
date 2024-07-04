@@ -1,6 +1,7 @@
 // banner
 section.banner {
     height: 100vh;
+    margin-bottom: 0;
     // background-image: url('~/images/grid_pattern.svg') center center/cover;
 
     .left {
@@ -38,7 +39,7 @@ section.banner {
 
     .right {
         display: flex;
-        justify-content: center;
+        //justify-content: center;
         align-items: center;
 
         .right-content {
@@ -246,7 +247,6 @@ section.banner {
 }
 
 section.about {
-    padding-bottom: 50px;
 
     .container {
         display: grid;
@@ -262,6 +262,8 @@ section.about {
 
                 img {
                     object-fit: cover;
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }

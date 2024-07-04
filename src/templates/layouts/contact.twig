@@ -1,0 +1,56 @@
+{% extends 'base.twig' %}
+{% block content %}
+
+<div data-barba="wrapper">
+    <main class="view {{ body_class }}" data-barba="container" data-barba-namespace="contact" data-scroll-container>
+        <section class="ly contact">
+            <div class="container">
+                <h1>Besoin de plus d'informations ? Nous sommes là pour vous aider.</h1>
+                <form action="">
+                    <div class="left">
+                        <p class="title-left">Contactez-nous</p>
+                        <input type="text" placeholder="Nom">
+                        <input type="text" placeholder="Email">
+                        <textarea placeholder="Message"> </textarea>
+                        <div class="check">
+                            <input type="checkbox">
+                            <span>J'aimerais reçevoir la newsletter.</span>
+                        </div>
+                        <button class="btn btn-black"> Envoyer</button>
+                    </div>
+                    <div class="separator">
+                    </div>
+                    <div class="right">
+                        <p>Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                        {% include "img_webp.twig" with {
+							url: site.theme.path ~ '/images/Location.png', 
+						} %}
+                        <div class="icons">
+                            <div class="icon">
+                                <span>
+                                    <img src="{{site.theme.path ~ '/images/icons/Location Icon.png'}}" alt="">
+                                </span>
+                                NYC, United States
+                            </div>
+                            <div class="icon">
+                                <span>
+                                    <img src="{{site.theme.path ~ '/images/icons/Phone Icon.png'}}" alt="">
+                                </span>
+                                000111222333
+                            </div>
+                            <div class="icon">
+                                <span>
+                                    <img src="{{site.theme.path ~ '/images/icons/Email Icon.png'}}" alt="">
+                                </span>
+                                somebody@gmail.com
+                            </div>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</div>
+
+{% endblock %}
