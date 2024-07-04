@@ -1,52 +1,198 @@
 {% extends 'base.twig' %}
 {% block content %}
 
-<main class="view {{ body_class }}" >
-    <section class="ly archive-content">
+	<main class="view {{ body_class }}">
+		{# <section
+																										        class="ly archive-content">
+																										        {# 
+																										                            <div class="container filters">
+																										                                <div class="filter active">Tout</div>
+																										                                {% for term in categories %}
+																										                                    {% if term.slug != 'non-classe' %}
+																										                                        <a class="filter {{ category.slug == term.slug ? 'active' }}" href="{{ site.link ~ '/actualites/' ~ term.slug }}">{{ term.name }}</a>
+																										                                    {% endif %}
+																										                                {% endfor %}
+																										                            </div> #}
 
-        <div class="container filters">
-            <div class="filter active">Tout</div>
-            {% for term in categories %}
-                {% if term.slug != 'non-classe' %}
-                    <a class="filter {{ category.slug == term.slug ? 'active' }}" href="{{ site.link ~ '/actualites/' ~ term.slug }}">{{ term.name }}</a>
-                {% endif %}
-            {% endfor %}
-        </div>
-        
-        <div class="container listing">
-            {% for post in posts %}
-                <a class="card-news swiper-slide" href="{{ post.permalink }}" title="{{ post.post_title }}">
-                    {% include 'img_webp.twig' with {url: post.thumbnail, alt: post.post_title} %}
-                    <div class="meta">
-                        <div class="infos">
-                            <span class="date">Publié le {{ post.post_date|date('d/m/Y') }}</span>
-                            <span class="share"></span>
-                        </div>
-                        
-                        <h3>{{ post.post_title|nop }}</h3>
-                        <div class="desc">
-                            <p>{{ post.post_content|striptags|length > 210 ? post.post_content|striptags|slice(0, 210) ~ '...' : post.post_content|striptags  }}</p>
-                        </div>
-                    </div>
-                </a>
-            {% endfor %}
-        </div>
-        
-        {% if pagination.total > 1 %}
-            <div class="container pagination">
-                <ul>
-                    {% for page in pagination.pages %}
-                        <li class="page-btn {{ page.current ? 'active' : '' }}">
-                            {% if page.link %}
-                                <a href="{{ page.link }}" title="{{ page.name|notags }}"><span>{{ page.name }}</span></a>
-                            {% else %}
-                                <span>{{ page.name }}</span>
-                            {% endif %}
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-    </section>
-</main>
+		{#<div class="container listing">
+		                    {% for post in posts %}
+		                        <a class="card-news swiper-slide" href="{{ post.permalink }}" title="{{ post.post_title }}">
+		                            {% include 'img_webp.twig' with {url: post.thumbnail, alt: post.post_title} %}
+		                            <div class="meta">
+		                                <div class="infos">
+		                                    <span class="date">Publié le
+		                                        {{ post.post_date|date('d/m/Y') }}</span>
+		                                    <span class="share"></span>
+		                                </div>
+		        
+		                                <h3>{{ post.post_title|nop }}</h3>
+		                                <div class="desc">
+		                                    <p>{{ post.post_content|striptags|length > 210 ? post.post_content|striptags|slice(0, 210) ~ '...' : post.post_content|striptags  }}</p>
+		                                </div>
+		                            </div>
+		                        </a>
+		                    {% endfor %}
+		                </div>
+		        
+		                {% if pagination.total > 1 %}
+		                    <div class="container pagination">
+		                        <ul>
+		                            {% for page in pagination.pages %}
+		                                <li class="page-btn {{ page.current ? 'active' : '' }}">
+		                                    {% if page.link %}
+		                                        <a href="{{ page.link }}" title="{{ page.name|notags }}">
+		                                            <span>{{ page.name }}</span>
+		                                        </a>
+		                                    {% else %}
+		                                        <span>{{ page.name }}</span>
+		                                    {% endif %}
+		                                </li>
+		                            {% endfor %}
+		                        </ul>
+		                    </div>
+		                {% endif %}
+																																											</section>
+																																											#}
+
+			<section class="ly archive-content news" data-barba="container" data-barba-namespace="archive"> <div class="container">
+				<div class="title-small">
+					<p>Restez informé des dernières nouvelles et des événements chez Performance Galaxy</p>
+				</div>
+				<div class="news-grid wrapper">
+					{% for index, post in posts %}
+
+						<a href="{{ post.permalink }}" title="{{ post.post_title }}" class="card _{{index+1}}">
+							<div class="content">
+								<div class="text">
+									<h3 tabindex="0">{{ post.post_title|nop }}</h3>
+									<p>{{ post.post_content|striptags|length > 210 ? post.post_content|striptags|slice(0, 210) ~ '...' : post.post_content|striptags  }}</p>
+								</div>
+								<div class="info">
+									<p>{{ post.post_date|date('d/m/Y') }}</p>
+
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
+									</svg>
+
+								</div>
+							</div>
+						</a>
+					{% endfor %}
+
+					{# <div class="card b">
+																																																																		<div class="content">
+																																																																			<div class="text">
+																																																																				<h3 tabindex="0">Lancement de la plateforme</h3>
+																																																																				<p>Découvrez comment notre nouvelle plateforme peut aider les entreprises à trouver les talents dont elles ont besoin.</p>
+																																																																			</div>
+																																																																			<div class="info">
+																																																																				<p>12/12/2021</p>
+																																																																				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+																																																																					<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
+																																																																				</svg>
+																																																												
+																																																																			</div>
+																																																																		</div>
+																																																																	</div>
+																																																																	<div class="card c">
+																																																																		<div class="content">
+																																																																			<div class="text">
+																																																																				<h3 tabindex="0">Lancement de la plateforme</h3>
+																																																																				<p>Découvrez comment notre nouvelle plateforme peut aider les entreprises à trouver les talents dont elles ont besoin.</p>
+																																																																			</div>
+																																																																			<div class="info">
+																																																																				<p>12/12/2021</p>
+																																																												
+																																																																				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+																																																																					<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
+																																																																				</svg>
+																																																												
+																																																																			</div>
+																																																																		</div>
+																																																																	</div>
+																																																																	<div class="card d">
+																																																																		<div class="content">
+																																																																			<div class="text">
+																																																																				<h3 tabindex="0">Lancement de la plateforme</h3>
+																																																																				<p>Découvrez comment notre nouvelle plateforme peut aider les entreprises à trouver les talents dont elles ont besoin.</p>
+																																																																			</div>
+																																																																			<div class="info">
+																																																																				<p>12/12/2021</p>
+																																																												
+																																																																				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+																																																																					<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
+																																																																				</svg>
+																																																												
+																																																																			</div>
+																																																																		</div>
+																																																																	</div>
+																																																																	<div class="card e">
+																																																																		<div class="content">
+																																																																			<div class="text">
+																																																																				<h3 tabindex="0">Lancement de la plateforme</h3>
+																																																																				<p>Découvrez comment notre nouvelle plateforme peut aider les entreprises à trouver les talents dont elles ont besoin.</p>
+																																																																			</div>
+																																																																			<div class="info">
+																																																																				<p>12/12/2021</p>
+																																																												
+																																																																				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+																																																																					<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
+																																																																				</svg>
+																																																												
+																																																																			</div>
+																																																																		</div>
+																																																																	</div>
+																																																																	<div class="card f">
+																																																																		<div class="content">
+																																																																			<div class="text">
+																																																																				<h3 tabindex="0">Lancement de la plateforme</h3>
+																																																																				<p>Découvrez comment notre nouvelle plateforme peut aider les entreprises à trouver les talents dont elles ont besoin.</p>
+																																																																			</div>
+																																																																			<div class="info">
+																																																																				<p>12/12/2021</p>
+																																																												
+																																																																				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+																																																																					<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
+																																																																				</svg>
+																																																												
+																																																																			</div>
+																																																																		</div>
+																																																																	</div>
+																																																																	<div class="card g">
+																																																																		<div class="content">
+																																																																			<div class="text">
+																																																																				<h3 tabindex="0">Lancement de la plateforme</h3>
+																																																																				<p>Découvrez comment notre nouvelle plateforme peut aider les entreprises à trouver les talents dont elles ont besoin.</p>
+																																																																			</div>
+																																																																			<div class="info">
+																																																																				<p>12/12/2021</p>
+																																																												
+																																																																				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+																																																																					<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
+																																																																				</svg>
+																																																												
+																																																																			</div>
+																																																																		</div>
+																																																																	</div>
+																																																																	<div class="card h">
+																																																																		<div class="content">
+																																																																			<div class="text">
+																																																																				<h3 tabindex="0">Lancement de la plateforme</h3>
+																																																																				<p>Découvrez comment notre nouvelle plateforme peut aider les entreprises à trouver les talents dont elles ont besoin.</p>
+																																																																			</div>
+																																																																			<div class="info">
+																																																																				<p>12/12/2021</p>
+																																																												
+																																																																				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+																																																																					<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"/>
+																																																																				</svg>
+																																																												
+																																																																			</div>
+																																																																		</div>
+																																																																	</div> #}
+				</div>
+			</div>
+		</section>
+
+	</main>
 {% endblock content %}
