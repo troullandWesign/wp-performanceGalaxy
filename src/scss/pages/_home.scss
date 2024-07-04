@@ -39,7 +39,7 @@ section.banner {
 
     .right {
         display: flex;
-        justify-content: center;
+        //justify-content: center;
         align-items: center;
 
         .right-content {
@@ -232,7 +232,6 @@ section.banner {
 }
 
 section.about {
-    padding-bottom: 50px;
 
     .container {
         display: grid;
@@ -248,6 +247,8 @@ section.about {
 
                 img {
                     object-fit: cover;
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }
