@@ -174,7 +174,7 @@ section.banner {
             padding: 20px;
             font-size: 150%;
             border-radius: 25px;
-            display: flex;
+            display: none;
             flex-direction: column;
             justify-content: flex-end;
             position: relative;
@@ -253,20 +253,25 @@ section.banner {
             }
         }
 
-        .a {
+        .card[class^='_'],
+        .card[class*=' _'] {
+            display: flex;
+        }
+
+        ._1 {
             grid-area: a;
             height: 600px
         }
 
-        .b {
+        ._2 {
             grid-area: b;
         }
 
-        .c {
+        ._3 {
             grid-area: c;
         }
 
-        .d {
+        ._4 {
             grid-area: d;
         }
     }
@@ -282,14 +287,14 @@ section.banner {
     .title-small {
         width: 70%;
         text-align: center;
-        
+
     }
 
     form {
         text-align: center;
         display: block;
         width: 50%;
-        
+
     }
 }
 
