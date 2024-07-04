@@ -318,8 +318,17 @@ section.about {
         }
 
         .right {
+            .title-small {
+                margin-bottom: 30px;
+            }
             .content {
                 margin-bottom: 40px;
+                p {
+                    margin-bottom: 20px;
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
             }
         }
     }

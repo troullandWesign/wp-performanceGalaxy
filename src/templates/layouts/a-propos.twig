@@ -1,0 +1,39 @@
+{% extends 'base.twig' %}
+{% block content %}
+
+	<div data-barba="wrapper">
+		<main class="view {{ body_class }}" data-barba="container" data-barba-namespace="a-propos" data-scroll-container>
+            	{% set section = page.get_field('section') %}
+                {% for item in section %}
+                    <section class="ly a-propos">
+                        <div class="container">
+                            <div class="big-title">
+                                {{item.title}}
+                            </div>
+                            <div class="block">
+                                {% if item.image_droite %}
+                                    <div class="content">
+                                        {{item.content}}
+                                    </div>
+                                    {% include "img_webp.twig" with {
+                                        url: item.image_droite.url, 
+                                        para : 'testos'
+                                    } %}
+                                {% else %}
+                                    {% include "img_webp.twig" with {
+                                        url: item.image_gauche.url, 
+                                        para : 'testos'
+                                    } %}
+                                    <div class="content">
+                                        {{item.content}}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </section>
+                {% endfor %}
+			
+		</main>
+	</div>
+
+{% endblock %}

@@ -3,10 +3,15 @@
 
 	<div data-barba="wrapper">
 		<main class="view {{ body_class }}" data-barba="container" data-barba-namespace="home" data-scroll-container>
-			{% include "banner.twig" %}
-			{% include "about.twig" %}
-			{% include "abonnements.twig" %}
-			{% include "news.twig" %}
+			{% set entry = page.get_field('entry') %}
+			{% include "banner.twig" with { entry: entry } %}
+			{% set about = page.get_field('about') %}
+			{% include "about.twig" with { about: about }  %}
+			{% set offre = page.get_field('offre') %}
+			{% include "abonnements.twig" with { offre: offre }  %}
+			{% set news = page.get_field('titre_actualites') %}
+			{% include "news.twig" with { news: news } %}
+			{% set contact = page.get_field('contact') %}
 			{% include "home_contact.twig" %}
 		</main>
 	</div>

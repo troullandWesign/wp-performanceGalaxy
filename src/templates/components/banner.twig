@@ -21,13 +21,13 @@
 			<div class="left-content">
 				<div class="text">
 					<div class="title-big">
-						<h1><strong>Bienvenue chez Performance Galaxy</strong></h1>
+						<h1>{{entry.title}}</h1>
 					</div>
-					<p>Boostez votre entreprise avec des solutions innovantes</p>
+					<p>{{entry.content}}</p>
 				</div>
 				<div class="buttons">
-					<a href="#" class="btn btn-black">Nos services</a>
-					<a href="#" class="btn btn-white">Contact</a>
+					<a href="{{entry.bouton_1.url}}" class="btn btn-black">{{entry.bouton_1.title}}</a>
+					<a href="{{entry.bouton_2.url}}" class="btn btn-white">{{entry.bouton_2.title}}</a>
 				</div>
 			</div>
 		</div>
@@ -35,13 +35,13 @@
 			<div class="right-content w-3">
 
 				<p class="text">
-					Moi c’est Pierrick Geslain et je vous apportes mes satellites pour vos besoins.
+					{{entry.intro}}
 				</p>
 				{# {% include "img_webp.twig" with {
 																																				                                                url: site.theme.path ~ '/images/talking_arrow.svg',
 																																				                                            } %} #}
 				{% include "img_webp.twig" with {
-                                                url: site.theme.path ~ '/images/pierrick_geslin.png',
+                                                url: entry.image.url,
                                                 class: 'photo'
                                             } %}
 			</div>
