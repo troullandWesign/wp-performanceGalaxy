@@ -8,10 +8,10 @@ class CustomPostTypes extends AbstractController
 {
     public function __construct()
     {
-        $this->register_post_type('abonnements', [$this, 'abonnements']);
+        $this->register_post_type('abonnement', [$this, 'abonnement']);
     }
 
-	public static function abonnements()
+	public static function abonnement()
 	{
         return [
             'labels'             => array(

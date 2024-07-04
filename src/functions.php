@@ -302,7 +302,7 @@ class WS_Starter extends TimberSite {
 
       $offres = Timber::get_posts(
          array(
-            'post_type' => 'abonnements',
+            'post_type' => 'abonnement',
             'posts_per_page' => -1
          )
       );
