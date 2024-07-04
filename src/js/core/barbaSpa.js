@@ -16,6 +16,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 
 /*Views*/
 import home from '../views/home'
+import gammes from '../views/gammes'
 
 
 class Spa {
@@ -30,6 +31,7 @@ class Spa {
             logLevel: 'error',
             views: [
                 home,
+                gammes
             ],
             transitions: [
                 {

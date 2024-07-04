@@ -1,0 +1,131 @@
+{% extends 'base.twig' %}
+{% block content %}
+
+<div data-barba="wrapper">
+    <main class="view {{ body_class }}" data-barba="container" data-barba-namespace="gammes" data-scroll-container>
+        <section class="ly abonnements gammes">
+            <div class="container">
+                <div class="intro">
+                    <a href="#" class="btn btn-black">Abonnements</a>
+                    <div class="title-small">
+                        <p>Choisissez la planète qui vous convient le mieux</p>
+                    </div>
+                    <p>Découvrez nos offres adaptées à chaque besoin pour accompagner la croissance de votre entreprise.</p>
+                </div>
+                <div class="listing-abonnements">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="content swiper-slide">
+                                <div class="top">
+                                    <div class="title-small">
+                                        <p>Neptune</p>
+                                    </div>
+                                    <img src="{{site.theme.path ~ '/images/neptune.png'}}" alt="">
+                                </div>
+                                <div class="text-content">
+                                    <ul>
+                                        {% for i in 1..4 %}
+                                            <li>
+                                                {% include "img_webp.twig" with {
+                                                    url: site.theme.path ~ '/images/icons/check-circle.png', 
+                                                } %}
+                                                Lorem ipsum lorem ipsum
+                                            </li>
+                                        {% endfor %}
+                                    </ul>   
+                                    <div class="action">
+                                        <a href="" class="btn btn-black">En savoir plus</a>
+                                    </div>                   
+                                </div>
+                            </div>
+                            <div class="content swiper-slide">
+                                <div class="top">
+                                    <div class="title-small">
+                                        <p>Uranus</p>
+                                    </div>
+                                    <img src="{{site.theme.path ~ '/images/uranus.png'}}" alt="">
+                                </div>
+                                <div class="text-content">
+                                    <ul>
+                                        {% for i in 1..4 %}
+                                            <li>
+                                                {% include "img_webp.twig" with {
+                                                    url: site.theme.path ~ '/images/icons/check-circle.png', 
+                                                } %}
+                                                Lorem ipsum lorem ipsum
+                                            </li>
+                                        {% endfor %}
+                                    </ul>   
+                                    <div class="action">
+                                        <a href="" class="btn btn-black">En savoir plus</a>
+                                    </div>                   
+                                </div>
+                            </div>
+                            <div class="content swiper-slide">
+                                <div class="top">
+                                    <div class="title-small">
+                                        <p>Saturne</p>
+                                    </div>
+                                    <img src="{{site.theme.path ~ '/images/saturne.png'}}" alt="">
+                                </div>
+                                <div class="text-content">
+                                    <ul>
+                                        {% for i in 1..4 %}
+                                            <li>
+                                                {% include "img_webp.twig" with {
+                                                    url: site.theme.path ~ '/images/icons/check-circle.png', 
+                                                } %}
+                                                Lorem ipsum lorem ipsum
+                                            </li>
+                                        {% endfor %}
+                                    </ul>   
+                                    <div class="action">
+                                        <a href="" class="btn btn-black">En savoir plus</a>
+                                    </div>                   
+                                </div>
+                            </div>
+                            <div class="content swiper-slide">
+                                <div class="top">
+                                    <div class="title-small">
+                                        <p>Jupiter</p>
+                                    </div>
+                                    <img src="{{site.theme.path ~ '/images/jupiter.png'}}" alt="">
+                                </div>
+                                <div class="text-content">
+                                    <ul>
+                                        {% for i in 1..4 %}
+                                            <li>
+                                                <span>
+                                                    {% include "img_webp.twig" with {
+                                                    url: site.theme.path ~ '/images/icons/check-circle.png', 
+                                                        } %}
+                                                </span>
+                                                Lorem ipsum lorem ipsum
+                                            </li>
+                                        {% endfor %}
+                                    </ul>   
+                                    <div class="action">
+                                        <a href="" class="btn btn-black">En savoir plus</a>
+                                    </div>                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% include "rassurance.twig" %}
+        <section class="ly content">
+            <div class="container">
+                <h2>Titre</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="action">
+                    <a href="#" class="btn btn-black">Lire plus</a>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+</div>
+
+{% endblock %}
