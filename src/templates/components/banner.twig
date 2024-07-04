@@ -1,4 +1,16 @@
 <section class="ly banner">
+	<div class="meteore-right">
+		{% include "img_webp.twig" with {
+			url: site.theme.path ~ '/images/icons/aste-bleu.svg', 
+			para : 'mete1'
+		} %}
+	</div>
+	<div class="meteore-left">
+		{% include "img_webp.twig" with {
+			url: site.theme.path ~ '/images/icons/aste-multi.svg', 
+			para : 'mete2'
+		} %}
+	</div>
 	<div class="grid_pattern">
 		{% include "img_webp.twig" with {
 			url: site.theme.path ~ '/images/grid_pattern.svg', 
