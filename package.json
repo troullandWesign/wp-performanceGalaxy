@@ -15,7 +15,8 @@
     "lodash.assign": "^4.2.0",
     "postcss": "^8.2.15",
     "sniffer": "watsondg/sniffer",
-    "swiper": "^8.4.7"
+    "swiper": "^8.4.7",
+    "ua-parser-js": "^1.0.38"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",

@@ -78,39 +78,60 @@ section.rassurance {
     .listing {
         display: flex;
         justify-content: center;
+
         .directeur {
             display: flex;
             align-items: center;
             padding-right: 40px;
             gap: 10px;
+
             picture {
                 width: 45px;
                 height: 45px;
             }
         }
-        .directeur,.audit,.experience,.prestataire {
+
+        .directeur,
+        .audit,
+        .experience,
+        .prestataire {
             padding: 0 40px;
+
             div {
                 display: flex;
                 flex-direction: column;
                 align-items: end;
             }
+
             span {
                 @include fluid-size(26px, 36px, 1200px, 1920px);
                 font-weight: 700;
             }
+
             p {
                 color: #766D6D;
                 font-weight: 700;
                 @include fluid-size(21px, 24px, 1200px, 1920px);
             }
         }
+
         .audit {
-             border-left: 2px solid $black;
-             border-right: 2px solid $black;
+            border-left: 2px solid $black;
+            border-right: 2px solid $black;
         }
+
         .experience {
             border-left: 2px solid $black;
         }
     }
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: $font-secondary;
+    font-size: 1rem;
+    background-color: rgba(217, 217, 217, 0.5);
+    border: 2px solid #C9C9C9;
+    // color: $color-primary;
 }
