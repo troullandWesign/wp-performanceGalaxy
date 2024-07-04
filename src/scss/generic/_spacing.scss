@@ -1,0 +1,60 @@
+root {
+    /* spacing values */
+    --space-unit: 1rem;
+    --space-xxxs: calc(0.25 * var(--space-unit));
+    --space-xxs:  calc(0.5 * var(--space-unit));
+    --space-xs:   --space-unit;
+    --space-sm:   calc(2 * var(--space-unit));
+    --space-md:   calc(3 * var(--space-unit));
+    --space-lg:   calc(4 * var(--space-unit));
+    --space-xl:   calc(6 * var(--space-unit));
+    --space-xxl:  calc(8 * var(--space-unit));
+    --space-xxxl: calc(10 * var(--space-unit));
+}
+
+// optional - edit space unit and padding of all components at a specific breakpoint
+@include min(md) {
+    :root {
+        --space-unit: 1.5;
+    }
+}
+
+//m-block m-inline p-block p-inline
+$spacingSizes : 
+    "small" var(--space-sm) var(--space-sm) var(--space-sm) var(--space-sm),
+    "medium" var(--space-md) var(--space-md) var(--space-md) var(--space-md),
+    "large" var(--space-lg) var(--space-lg) var(--space-lg) var(--space-lg),
+    "xlarge" var(--space-xl) var(--space-xl) var(--space-xl) var(--space-xl);
+
+@each $sizeName, $mblock, $minline, $pblock, $pinline in $spacingSizes {
+    .sp_m--#{$sizeName} {
+        margin: $mblock $minline;
+    }
+    .sp_p--#{$sizeName} {
+        padding: $pblock $pinline;
+    }
+    .sp_m-block--#{$sizeName}, .sp_m-top--#{$sizeName} {
+        margin-top: $mblock;
+    }
+    .sp_m-block--#{$sizeName}, .sp_m-bottom--#{$sizeName} {
+        margin-bottom: $mblock;
+    }
+    .sp_m-inline--#{$sizeName}, .sp_m-left--#{$sizeName} {
+        margin-left: $minline;
+    }
+    .sp_m-inline--#{$sizeName}, .sp_m-right--#{$sizeName} {
+        margin-right: $minline;
+    }
+    .sp_p-block--#{$sizeName}, .sp_p-top--#{$sizeName} {
+        padding-top: $pblock;
+    }
+    .sp_p-block--#{$sizeName}, .sp_p-bottom--#{$sizeName} {
+        padding-bottom: $pblock;
+    }
+    .sp_p-inline--#{$sizeName}, .sp_p-left--#{$sizeName} {
+        padding-left: $pinline;
+    }
+    .sp_p-inline--#{$sizeName}, .sp_p-right--#{$sizeName} {
+        padding-right: $pinline;
+    }
+}
