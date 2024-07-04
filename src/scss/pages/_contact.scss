@@ -1,11 +1,35 @@
 section.contact {
     margin-top: 175px;
-    padding-bottom: 100px;
+    // padding-bottom: 100px;
+
+
+
+    .grid_pattern {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        opacity: 0.4;
+
+        picture {
+            img {
+                height: 100vh;
+            }
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     h1 {
         margin-bottom: 50px;
         text-align: center;
     }
+
     form {
+        width: 80%;
         border-radius: 54px;
         padding: 20px 50px;
         border: 1px solid $light;
@@ -13,20 +37,147 @@ section.contact {
         grid-template-columns: 47.5% 1fr 47.5%;
         gap: 40px;
         align-items: center;
+        background: white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
         .left {
             display: flex;
             flex-direction: column;
             gap: 30px;
-            padding-right: 40px;
+            padding-right: 20px;
 
             .title-left {
                 font-family: $font-secondary;
                 font-weight: 700;
                 font-size: 40px;
             }
+
+            .form__container {
+                display: flex;
+                flex-wrap: wrap;
+                // gap: 20px;
+            }
+
+            .form__group {
+                position: relative;
+                padding: 15px 10px;
+
+                width: 50%; // margin-top: 10px;
+
+                textarea {
+                    resize: none;
+                    height: 100px;
+                }
+
+                &:has(textarea) {
+                    width: 100%;
+                }
+
+                // after on select
+                &:has(select)::after {
+                    content: "";
+                    position: absolute;
+                    top: 55%;
+                    right: 10px;
+                    width: 0;
+                    height: 0;
+                    border: 6px solid transparent;
+                    border-top-color: #000; // Replace with the actual color for the arrow
+                    background: white;
+                    transform: translateY(-50%);
+                    pointer-events: none;
+                }
+            }
+
+            select {
+                border: none;
+                -webkit-appearance: none;
+                /* Safari et Chrome */
+                -moz-appearance: none;
+                /* Firefox */
+                appearance: none;
+
+
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+
+                position: relative;
+
+
+            }
+
+            .form__field {
+                border-radius: 0;
+                font-family: inherit;
+                width: 100%;
+                border: 0;
+                border-bottom: 1px solid $black;
+                outline: 0;
+                font-size: 1rem;
+                color: $black;
+                padding: 7px 0;
+                background: transparent;
+                transition: border-color 0.2s;
+
+                &::placeholder {
+                    color: transparent;
+                }
+
+                &:placeholder-shown~.form__label {
+                    font-size: 1rem;
+                    cursor: text;
+                    top: 20px;
+                }
+            }
+
+            .form__label {
+                position: absolute;
+                top: 0;
+                display: block;
+                transition: 0.2s;
+                font-size: 1rem;
+                color: $black;
+            }
+
+            .form__field:focus {
+                ~.form__label {
+                    position: absolute;
+                    top: 0;
+                    display: block;
+                    transition: 0.2s;
+                    font-size: 1rem;
+                    color: $black;
+                }
+
+                padding-bottom: 6px;
+                border-width: 3px;
+                // border-image: linear-gradient(to right, $black, $light);
+                border-image-slice: 1;
+            }
+
+            /* reset input */
+            .form__field {
+
+                &:required,
+                &:invalid {
+                    box-shadow: none;
+                }
+            }
+
+            /* demo */
+            body {
+                font-family: 'Poppins', sans-serif;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                font-size: 1.5rem;
+                background-color: #222222;
+            }
         }
-    
+
         .separator {
             border: 1px solid black;
             height: 300px;
@@ -37,9 +188,18 @@ section.contact {
             flex-direction: column;
             gap: 30px;
             max-height: 400px;
+
+            padding-right: 20px;
+
             .icons {
                 .icon {
                     margin-bottom: 10px;
+
+                    span {
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                    }
+
                     &:last-child {
                         margin-bottom: 0;
                     }
@@ -47,4 +207,8 @@ section.contact {
             }
         }
     }
+}
+
+.contact~.rassurance {
+    margin-bottom: 140px;
 }

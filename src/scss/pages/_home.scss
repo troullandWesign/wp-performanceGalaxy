@@ -2,22 +2,28 @@
 section.banner {
     height: 100vh;
     margin-bottom: 0;
+
     // background-image: url('~/images/grid_pattern.svg') center center/cover;
-    .meteore-right, .meteore-left {
+    .meteore-right,
+    .meteore-left {
         position: absolute;
         width: 150px;
     }
+
     .meteore-right {
         bottom: 150px;
         left: -80px;
     }
+
     .meteore-left {
         top: 150px;
         right: -30px;
+
         picture {
             //transform: rotate(30deg);
         }
     }
+
     .left {
         align-content: center;
 
@@ -81,6 +87,7 @@ section.banner {
                     top: 0;
                     right: 90%;
                     height: 200px;
+
                     // background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, #FFFFFF 100%);
                     @include min(xlm) {
                         top: 75px;
@@ -96,7 +103,7 @@ section.banner {
                     height: 300px;
                     background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, #FFFFFF 100%);
                 }
-                
+
                 img {
                     object-fit: cover;
                     height: 100%;
@@ -265,9 +272,30 @@ section.banner {
     }
 }
 
+.news~.contact {
+    margin-bottom: 100px;
+
+    .container {
+        gap: 25px;
+    }
+
+    .title-small {
+        width: 70%;
+        text-align: center;
+        
+    }
+
+    form {
+        text-align: center;
+        display: block;
+        width: 50%;
+        
+    }
+}
+
 section.about {
     position: relative;
-    
+
     .container {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -299,20 +327,24 @@ section.about {
 
 section.abonnements {
     position: relative;
+
     .meteores {
         transform: rotate(220deg);
         width: 300px;
         position: absolute;
         top: 20px;
         left: -50px;
+
         picture {
+
             //transform: rotate(90deg);
             &.img-wrap {
                 overflow: none;
             }
-            
+
         }
     }
+
     .container {
         .intro {
             text-align: center;
@@ -351,22 +383,27 @@ section.abonnements {
 
                 .top {
                     text-align: center;
+
                     .title-small {
                         display: flex;
                         justify-content: center;
+
                         span {
                             position: absolute;
                             left: 20px;
+
                             img {
                                 width: 50px;
                             }
                         }
+
                         .crown {
                             right: 20px;
                             width: fit-content;
                             left: initial;
                         }
                     }
+
                     img {
                         width: 200px;
                     }
@@ -420,6 +457,7 @@ section.abonnements {
                     .text-content {
                         ul {
                             border-bottom: 1px solid #4f8ae0;
+
                             li {
                                 * {
                                     color: #4f8ae0;
@@ -448,6 +486,7 @@ section.abonnements {
                     .text-content {
                         ul {
                             border-bottom: 1px solid #00616c;
+
                             li {
                                 * {
                                     color: #00616c;
@@ -475,6 +514,7 @@ section.abonnements {
                     .text-content {
                         ul {
                             border-bottom: 1px solid #ffea92;
+
                             li {
                                 * {
                                     color: #ffea92;
@@ -503,6 +543,7 @@ section.abonnements {
                     .text-content {
                         ul {
                             border-bottom: 1px solid #ffa039;
+
                             li {
                                 * {
                                     color: #ffa039;

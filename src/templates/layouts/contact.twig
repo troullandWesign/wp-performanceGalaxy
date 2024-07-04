@@ -1,56 +1,90 @@
 {% extends 'base.twig' %}
 {% block content %}
 
-<div data-barba="wrapper">
-    <main class="view {{ body_class }}" data-barba="container" data-barba-namespace="contact" data-scroll-container>
-        <section class="ly contact">
-            <div class="container">
-                <h1>Besoin de plus d'informations ? Nous sommes là pour vous aider.</h1>
-                <form action="">
-                    <div class="left">
-                        <p class="title-left">Contactez-nous</p>
-                        <input type="text" placeholder="Nom">
-                        <input type="text" placeholder="Email">
-                        <textarea placeholder="Message"> </textarea>
-                        <div class="check">
-                            <input type="checkbox">
-                            <span>J'aimerais reçevoir la newsletter.</span>
-                        </div>
-                        <button class="btn btn-black"> Envoyer</button>
-                    </div>
-                    <div class="separator">
-                    </div>
-                    <div class="right">
-                        <p>Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
-                        {% include "img_webp.twig" with {
+	<div data-barba="wrapper">
+		<main class="view {{ body_class }}" data-barba="container" data-barba-namespace="contact" data-scroll-container>
+			<section class="ly contact">
+				<div class="grid_pattern">
+					{% include "img_webp.twig" with {
+			url: site.theme.path ~ '/images/grid_pattern.svg', 
+		} %}
+				</div>
+				<div class="container">
+					<h1>Besoin de plus d'informations ? Nous sommes là pour vous aider.</h1>
+					<form action="">
+						<div class="left">
+							<p class="title-left">Contactez-nous</p>
+							{# <input type="text" placeholder="Nom"> #}
+							<div class="form__container">
+								<div class="form__group field">
+									<input type="text" class="form__field" placeholder="Prénom" name="prenom" id='prenom' required/>
+									<label for="prenom" class="form__label">Prénom</label>
+								</div>
+								<div class="form__group field">
+									<input type="text" class="form__field" placeholder="Nom" name="nom" id='nom' required/>
+									<label for="nom" class="form__label">Nom</label>
+								</div>
+								<div class="form__group field">
+									<input type="text" class="form__field" placeholder="Email" name="email" id='email' required/>
+									<label for="email" class="form__label">Email</label>
+								</div>
+								<div
+									class="form__group field">
+									{# <input type="textarea" class="form__field" placeholder="Name" name="name" id='name' required/>
+																																																																																																																																																																																																															<label for="name" class="form__label">Name</label> #}
+									<select class="form__field" name="objet" id="objet">
+										<option value="0">Demande d'informations</option>
+										<option value="1">Candidature sponttanée</option>
+										<option value="2">Demande de devis</option>
+										<option value="3">Demande de partenariat</option>
+									</select>
+								</div>
+								<div class="form__group field">
+									<textarea class="form__field" placeholder="Message" name="message" id='message' required></textarea>
+									<label for="message" class="form__label">Message</label>
+								</div>
+							</div>
+							<div class="check">
+								<input type="checkbox">
+								<span>J'aimerais reçevoir la newsletter.</span>
+							</div>
+							<button class="btn btn-black">
+								Envoyer</button>
+						</div>
+						<div class="separator"></div>
+						<div class="right">
+							<p>Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+							{% include "img_webp.twig" with {
 							url: site.theme.path ~ '/images/Location.png', 
 						} %}
-                        <div class="icons">
-                            <div class="icon">
-                                <span>
-                                    <img src="{{site.theme.path ~ '/images/icons/Location Icon.png'}}" alt="">
-                                </span>
-                                NYC, United States
-                            </div>
-                            <div class="icon">
-                                <span>
-                                    <img src="{{site.theme.path ~ '/images/icons/Phone Icon.png'}}" alt="">
-                                </span>
-                                000111222333
-                            </div>
-                            <div class="icon">
-                                <span>
-                                    <img src="{{site.theme.path ~ '/images/icons/Email Icon.png'}}" alt="">
-                                </span>
-                                somebody@gmail.com
-                            </div>
-                            
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
-</div>
+							<div class="icons">
+								<div class="icon">
+									<span>
+										<img src="{{site.theme.path ~ '/images/icons/Location Icon.png'}}" alt="">
+									</span>
+									NYC, United States
+								</div>
+								<div class="icon">
+									<span>
+										<img src="{{site.theme.path ~ '/images/icons/Phone Icon.png'}}" alt="">
+									</span>
+									000111222333
+								</div>
+								<div class="icon">
+									<span>
+										<img src="{{site.theme.path ~ '/images/icons/Email Icon.png'}}" alt="">
+									</span>
+									somebody@gmail.com
+								</div>
+
+							</div>
+						</div>
+					</form>
+				</div>
+
+			</section>
+			{% include "rassurance.twig" %}
+		</main>
+	</div>
 
 {% endblock %}
