@@ -39,7 +39,8 @@ input {
     display: inline-block;
 
     input[type="text"] {
-        padding-right: 30px; /* Adjust this value based on the SVG size */
+        padding-right: 30px;
+        /* Adjust this value based on the SVG size */
         box-sizing: border-box;
     }
 
@@ -48,14 +49,14 @@ input {
         right: 5px;
         top: 50%;
         transform: translateY(-50%) rotate(90deg);
-        pointer-events: none; 
+        pointer-events: none;
     }
 }
 
 .title-big {
     * {
         @include fluid-size(35px, 60px, 1200px, 1920px);
-        font-family: $font-primary; 
+        font-family: $font-primary;
     }
 }
 
@@ -71,4 +72,14 @@ input {
         font-size: 30px;
         font-family: $font-primary;
     }
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: $font-secondary;
+    font-size: 1.2rem;
+    background-color: rgba(217, 217, 217, 0.5);
+    border: 2px solid #C9C9C9;
+    // color: $color-primary;
 }
