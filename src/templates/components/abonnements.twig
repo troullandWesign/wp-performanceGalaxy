@@ -16,118 +16,42 @@
         <div class="listing-abonnements">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="content swiper-slide">
-                        <div class="top">
-                            <div class="title-small">
-                                <span>
-                                    <img src="{{site.theme.path ~ '/images/icons/Neptune.svg'}}" alt="">
-                                </span>
-                                <p>Neptune</p>
-                            </div>
-                            <img src="{{site.theme.path ~ '/images/neptune.png'}}" alt="">
-                        </div>
-                        <div class="text-content">
-                            <ul>
-                                {% for i in 1..4 %}
-                                    <li>
-                                        {% include "img_webp.twig" with {
-                                            url: site.theme.path ~ '/images/icons/check-1.png', 
-                                        } %}
-                                        Lorem ipsum lorem ipsum
-                                    </li>
-                                {% endfor %}
-                            </ul>   
-                            <div class="action">
-                                <a href="" class="btn btn-black">En savoir plus</a>
-                            </div>                   
-                        </div>
-                    </div>
-                    <div class="content swiper-slide">
-                        <div class="top">
-                            <div class="title-small">
-                                <span>
-                                    <img src="{{site.theme.path ~ '/images/icons/Uranus.svg'}}" alt="">
-                                </span>
-                                <p>Uranus</p>
-                            </div>
-                            <img src="{{site.theme.path ~ '/images/uranus.png'}}" alt="">
-                        </div>
-                        <div class="text-content">
-                            <ul>
-                                {% for i in 1..4 %}
-                                    <li>
-                                        {% include "img_webp.twig" with {
-                                            url: site.theme.path ~ '/images/icons/check-2.png', 
-                                        } %}
-                                        Lorem ipsum lorem ipsum
-                                    </li>
-                                {% endfor %}
-                            </ul>   
-                            <div class="action">
-                                <a href="" class="btn btn-black">En savoir plus</a>
-                            </div>                   
-                        </div>
-                    </div>
-                    <div class="content swiper-slide">
-                        <div class="top">
-                            <div class="title-small">
-                                <span>
-                                    <img src="{{site.theme.path ~ '/images/icons/saturne.svg'}}" alt="">
-                                </span>
-                                <p>Saturne</p>
-                                <span class="crown">
-                                    <img src="{{site.theme.path ~ '/images/icons/crown-3.svg'}}" alt="">
-                                </span>
-                            </div>
-                            <img src="{{site.theme.path ~ '/images/saturne.png'}}" alt="">
-                        </div>
-                        <div class="text-content">
-                            <ul>
-                                {% for i in 1..4 %}
-                                    <li>
-                                        {% include "img_webp.twig" with {
-                                            url: site.theme.path ~ '/images/icons/check-3.png', 
-                                        } %}
-                                        Lorem ipsum lorem ipsum
-                                    </li>
-                                {% endfor %}
-                            </ul>   
-                            <div class="action">
-                                <a href="" class="btn btn-black">En savoir plus</a>
-                            </div>                   
-                        </div>
-                    </div>
-                    <div class="content swiper-slide">
-                        <div class="top">
-                            <div class="title-small">
-                                <span>
-                                    <img src="{{site.theme.path ~ '/images/icons/jupitère.svg'}}" alt="">
-                                </span>
-                                <p>Jupiter</p>
-                                <span class="crown">
-                                    <img src="{{site.theme.path ~ '/images/icons/crown-4.svg'}}" alt="">
-                                </span>
-                            </div>
-                            <img src="{{site.theme.path ~ '/images/jupiter.png'}}" alt="">
-                        </div>
-                        <div class="text-content">
-                            <ul>
-                                {% for i in 1..4 %}
-                                    <li>
-                                        <span>
-                                            {% include "img_webp.twig" with {
-                                            url: site.theme.path ~ '/images/icons/check-4.png', 
-                                                } %}
+                    {% for post in offres %}
+                        <div class="content swiper-slide">
+                            <div class="top">
+                                <div class="title-small">
+                                    <span>
+                                        <img src="{{ post.logo.url }}" alt="{{ post.title }}">
+                                    </span>
+                                    <p>{{ post.title }}</p>
+                                    {% if post.prenium_card %}
+                                        <span class="crown">
+                                            <img src="{{ post.prenium_card.url}}" alt="Crown">
                                         </span>
-                                        Lorem ipsum lorem ipsum
-                                    </li>
-                                {% endfor %}
-                            </ul>   
-                            <div class="action">
-                                <a href="" class="btn btn-black">En savoir plus</a>
-                            </div>                   
+                                    {% endif %}
+                                </div>
+                                <img src="{{ post.thumbnail }}" alt="{{ post.title }}">
+                            </div>
+                            <div class="text-content">
+                               <ul>
+                                    {% set check_image_index = loop.index %}
+                                    {% for card in post.contenu_card %}
+                                        <li>
+                                            <span>
+                                                {% include "img_webp.twig" with {
+                                                    url: site.theme.path ~ '/images/icons/check-' ~ check_image_index ~ '.png'
+                                                } %}
+                                            </span>
+                                            {{ card.text }}
+                                        </li>
+                                    {% endfor %}
+                                </ul>      
+                                <div class="action">
+                                    <a href="{{ post.link }}" class="btn btn-black">En savoir plus</a>
+                                </div>                   
+                            </div>
                         </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

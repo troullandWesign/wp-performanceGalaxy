@@ -1,0 +1,79 @@
+{% extends 'base.twig' %}
+{% block content %}
+
+<div data-barba="wrapper">
+    <main class="view {{ body_class }}" data-barba="container" data-barba-namespace="offres" data-scroll-container>
+        <section class="ly abonnements gammes">
+            <div class="meteores">
+                {% include "img_webp.twig" with {
+                        url: site.theme.path ~ '/images/icons/meteorite.svg', 
+                        para : 'testos'
+                    } %}
+            </div>
+            <div class="container">
+                <div class="intro">
+                    <a href="#" class="btn btn-black">Abonnements</a>
+                    <div class="title-small">
+                        <p>Choisissez la planète qui vous convient le mieux</p>
+                    </div>
+                    <p>Découvrez nos offres adaptées à chaque besoin pour accompagner la croissance de votre entreprise.</p>
+                </div>
+                <div class="listing-abonnements">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            {% for post in offres %}
+                                <div class="content swiper-slide">
+                                    <div class="top">
+                                        <div class="title-small">
+                                            <span>
+                                                <img src="{{ post.logo.url }}" alt="{{ post.title }}">
+                                            </span>
+                                            <p>{{ post.title }}</p>
+                                            {% if post.prenium_card %}
+                                                <span class="crown">
+                                                    <img src="{{ post.prenium_card.url}}" alt="Crown">
+                                                </span>
+                                            {% endif %}
+                                        </div>
+                                        <img src="{{ post.thumbnail }}" alt="{{ post.title }}">
+                                    </div>
+                                    <div class="text-content">
+                                    <ul>
+                                            {% set check_image_index = loop.index %}
+                                            {% for card in post.contenu_card %}
+                                                <li>
+                                                    <span>
+                                                        {% include "img_webp.twig" with {
+                                                            url: site.theme.path ~ '/images/icons/check-' ~ check_image_index ~ '.png'
+                                                        } %}
+                                                    </span>
+                                                    {{ card.text }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>      
+                                        <div class="action">
+                                            <a href="{{ post.link }}" class="btn btn-black">En savoir plus</a>
+                                        </div>                   
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% include "rassurance.twig" %}
+        <section class="ly content">
+            <div class="container">
+                <h2>Titre</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="action">
+                    <a href="#" class="btn btn-black">Lire plus</a>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+</div>
+
+{% endblock %}

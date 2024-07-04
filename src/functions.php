@@ -299,6 +299,21 @@ class WS_Starter extends TimberSite {
       /*$context['menu_open'] = new TimberMenu('menu-open');
       $context['menu_footer'] = new TimberMenu('menu-footer');*/
       $context['options'] = get_fields('option');
+
+      $offres = Timber::get_posts(
+         array(
+            'post_type' => 'abonnements',
+            'posts_per_page' => -1
+         )
+      );
+      foreach ($offres as $ag) {
+         $ag->logo = get_field('logo', $ag->ID);
+         $ag->contenu_card = get_field('contenu_card', $ag->ID);
+         $ag->thumbnail = get_the_post_thumbnail_url($ag->ID); 
+         $ag->prenium_card = get_field('prenium_crown', $ag->ID);
+         $ag->link = get_permalink($ag->ID);
+      }
+      $context['offres'] = $offres;
       
       return $context;
    }

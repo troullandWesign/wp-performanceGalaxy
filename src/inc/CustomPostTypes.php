@@ -8,39 +8,39 @@ class CustomPostTypes extends AbstractController
 {
     public function __construct()
     {
-        //$this->register_post_type('badges', [$this, 'badges']);
+        $this->register_post_type('abonnements', [$this, 'abonnements']);
     }
 
-	public static function badges()
+	public static function abonnements()
 	{
         return [
             'labels'             => array(
-                'name'               => _x('Badges', 'post type general name'),
-                'singular_name'      => _x('Badge', 'post type singular name'),
-                'add_new'            => _x('Ajouter un badge', 'book'),
-                'add_new_item'       => __('Ajouter un nouveau badge'),
-                'edit_item'          => __('Editer un badge'),
-                'new_item'           => __('Nouveau badge'),
-                'all_items'          => __('Tous les badges'),
-                'view_item'          => __('Voir le badge'),
-                'search_items'       => __('Rechercher un badge'),
-                'not_found'          => __('Aucun badge trouvé'),
-                'not_found_in_trash' => __('Aucun badge trouvé dans la corbeille'),
-                'menu_name'          => __('Badges')
+                'name'               => _x('Offre', 'post type general name'),
+                'singular_name'      => _x('Offre', 'post type singular name'),
+                'add_new'            => _x('Ajouter une Offre', 'book'),
+                'add_new_item'       => __('Ajouter une nouveau Offre'),
+                'edit_item'          => __('Editer une Offre'),
+                'new_item'           => __('Nouveau Offre'),
+                'all_items'          => __('Tous les Offres'),
+                'view_item'          => __('Voir les offres'),
+                'search_items'       => __('Rechercher une Offre'),
+                'not_found'          => __('Aucun Offre trouvée'),
+                'not_found_in_trash' => __('Aucun Offre trouvée dans la corbeille'),
+                'menu_name'          => __('Offres')
             ),
             'public'             => true,
-            'publicly_queryable' => false,
+            'publicly_queryable' => true,
             'show_in_rest'       => true,
             'show_ui'            => true,
             'show_in_menu'       => true,
-            'query_var'          => false,
+            'query_var'          => true,
             'capability_type'    => 'post',
-            'has_archive'        => false,
-            'hierarchical'       => false,
+            'has_archive'        => true,
+            'hierarchical'       => true,
             'menu_position'      => 5,
-            'menu_icon'          => 'dashicons-image-filter',
+            'menu_icon'          => 'dashicons-products',
             'supports'           => array( 'title', 'editor', 'thumbnail' ),
-            'rewrite'            => false
+            'rewrite'            => array( 'slug' => 'offre' )
         ];
     }
 }

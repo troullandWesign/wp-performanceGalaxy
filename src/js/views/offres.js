@@ -1,8 +1,8 @@
 import Swiper, { Autoplay, Navigation, Pagination, EffectCoverflow } from 'swiper';
 Swiper.use([Navigation, Pagination, Autoplay, EffectCoverflow]);
 
-class gammes {
-	namespace = 'gammes';
+class offres {
+	namespace = 'offres';
 
 	afterEnter = data => {
 		console.log('Gamme.js');
@@ -24,4 +24,4 @@ class gammes {
 	};
 }
 
-export default new gammes();
+export default new offres();

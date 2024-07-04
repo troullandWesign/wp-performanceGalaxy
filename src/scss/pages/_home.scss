@@ -339,7 +339,7 @@ section.abonnements {
 
             .content {
                 width: 25rem;
-                background-color: $light;
+                background: rgba(244, 244, 244, 0.9);
                 border-radius: .7rem;
                 border: 1px solid #C5C5C5;
                 overflow: hidden;
@@ -421,7 +421,10 @@ section.abonnements {
                         ul {
                             border-bottom: 1px solid #4f8ae0;
                             li {
-                                color: #4f8ae0;
+                                * {
+                                    color: #4f8ae0;
+                                }
+                                
                             }
                         }
                     }
@@ -446,7 +449,9 @@ section.abonnements {
                         ul {
                             border-bottom: 1px solid #00616c;
                             li {
-                                color: #00616c;
+                                * {
+                                    color: #00616c;
+                                }
                             }
                         }
                     }
@@ -460,7 +465,7 @@ section.abonnements {
 
                 &:nth-child(3) {
                     border: 1px solid #ffea92;
-                    background-color: rgba(26, 26, 26, 0.8);
+                    background-color: rgba(26, 26, 26, 0.9);
                     .top {
                         * {
                             color: #ffea92;
@@ -471,7 +476,9 @@ section.abonnements {
                         ul {
                             border-bottom: 1px solid #ffea92;
                             li {
-                                color: #ffea92;
+                                * {
+                                    color: #ffea92;
+                                }
                             }
                         }
                     }
@@ -485,7 +492,7 @@ section.abonnements {
 
                 &:nth-child(4) {
                     border: 1px solid #ffa039;
-                    background-color: rgba(26, 26, 26, 0.8);
+                    background-color: rgba(26, 26, 26, 0.9);
 
                     .top {
                         * {
@@ -497,7 +504,9 @@ section.abonnements {
                         ul {
                             border-bottom: 1px solid #ffa039;
                             li {
-                                color: #ffa039;
+                                * {
+                                    color: #ffa039;
+                                }
                             }
                         }
                     }

@@ -1,6 +1,6 @@
 <?php
 /*
-* Template Name: Gammes Template
+* Template Name: Abonnements Template
 */
 $context = Timber::context();
 $page = new Timber\Post();
@@ -12,4 +12,4 @@ $page = new Timber\Post();
 $context['page'] = $page;
 $context['test'] = 'home';
 
-Timber::render('gammes.twig', $context);
+Timber::render('offres.twig', $context);
