@@ -93,9 +93,9 @@ class FormManager extends FormErrorManager {
                 }
 
                 form.addEventListener('submit', function (e) {
-                    //console.log('submit')
+                    console.log('submit')
                     e.preventDefault();
-                    //console.log('submited');
+                    console.log('submited');
                     if (this.isPending) {
                         return;
                     }
