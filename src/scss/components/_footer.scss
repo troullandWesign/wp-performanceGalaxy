@@ -1,67 +1,90 @@
 .site-footer {
     background-color: $light;
     padding-top: 50px;
+
     .container {
         .main-item {
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             font-weight: 700;
         }
+
         .contact {
             p {
                 margin-bottom: 30px;
+
                 &:first-of-type {
                     margin-bottom: 50px;
                 }
             }
+
             a {
                 font-size: 14px;
             }
+
             .reseaux {
                 display: flex;
                 gap: 10px;
+
                 picture {
                     width: 24px;
                     height: 24px;
                 }
             }
+
             .phone {
                 margin-top: 30px;
                 @include fluid-size(14px, 16px, 1200px, 1920px);
             }
         }
-        .menu-left,.menu-right {
+
+        .menu-left,
+        .menu-right {
             ul li {
-                margin-bottom: 30px;
-                &:last-of-type{
+                margin-bottom: 15px;
+
+                &:last-of-type {
                     margin-bottom: 0;
-                } 
+                }
+
                 a {
                     @include fluid-size(14px, 16px, 1200px, 1920px);
+                    transition: all 0.3s;
+                }
+
+                a:hover {
+                    opacity: 0.5;
+                    text-decoration: underline;
                 }
             }
         }
+
         .newsletter {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+
             .text-news {
                 @include fluid-size(14px, 16px, 1200px, 1920px);
             }
         }
     }
+
     .full-font {
         margin-top: 50px;
         padding-bottom: 25px;
         border-bottom: 1px solid $black;
+
         img {
             width: 100%;
-        } 
+        }
     }
+
     .mentions {
         padding: 25px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         * {
             font-size: 12px;
         }
