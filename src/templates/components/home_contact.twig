@@ -9,28 +9,58 @@
 		</div>
 
 
-		<form action="">
+		<form class="form form--contact js-form" data-action="handle_form_contact" novalidate>
+			{# Optional #}
+						<div class="form-status">
+							<div class="icons">
+								<svg class="icn__error" xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+									<circle cx="22.5" cy="22.5" r="22.5" fill="#e35757" />
+									<path d="M16,32.2l8.1-8.1L32.2,16" transform="translate(-1.6 -1.6)" fill="none" stroke="#fff"
+										stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+									<path d="M16,16l8.1,8.1,8.1,8.1" transform="translate(-1.6 -1.6)" fill="none" stroke="#fff"
+										stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+								</svg>
+								<svg class="icn__success" xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+									<circle cx="22.5" cy="22.5" r="22.5" fill="#25ae88" />
+									<path d="M35.4,15,21,31.2,12,24" transform="translate(-1.2 -1.5)" fill="none" stroke="#fff"
+										stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
+								</svg>
+								<div class="form-status__spinner">
+									<div></div>
+								</div>
+							</div>
+							<span class="form-status__message">Envoi des informations saisies</span>
+						</div>
+						{##}
+						
+						{# Optional #}
+						<div class="form-sent-message">
+							<h3>Votre message a bien été envoyé</h3>
+							<p>Nous reviendrons vers vous dans les plus brefs délais.</p>
+							<a href="{{ site.link ~ '/' }}" title="Accueil" class="btn btn--primary"><span>Retour à la page d'accueil</span></a>
+						</div>
+						{##}
 			<div class="left">
 				<p class="title-left">Contactez-nous</p>
 				{# <input type="text" placeholder="Nom"> #}
 				<div class="form__container">
 					<div class="form__group field">
-						<input type="text" class="form__field" placeholder="Prénom" name="prenom" id='prenom' required/>
+						<input type="text" class="form__field" placeholder="Prénom" name="contact[prenom]" id='prenom' required/>
 						<label for="prenom" class="form__label">Prénom</label>
 					</div>
 					<div class="form__group field">
-						<input type="text" class="form__field" placeholder="Nom" name="nom" id='nom' required/>
+						<input type="text" class="form__field" placeholder="Nom" name="contact[nom]" id='nom' required/>
 						<label for="nom" class="form__label">Nom</label>
 					</div>
 					<div class="form__group field">
-						<input type="text" class="form__field" placeholder="Email" name="email" id='email' required/>
+						<input type="text" class="form__field" placeholder="Email" name="contact[email]" id='email' required/>
 						<label for="email" class="form__label">Email</label>
 					</div>
 					<div
 						class="form__group field">
 						{# <input type="textarea" class="form__field" placeholder="Name" name="name" id='name' required/>
 																																																																																																																																																																																																																																																						<label for="name" class="form__label">Name</label> #}
-						<select class="form__field" name="objet" id="objet">
+						<select class="form__field" name="contact[objet]" id="objet" >
 							<option value="0">Demande d'informations</option>
 							<option value="1">Candidature sponttanée</option>
 							<option value="2">Demande de devis</option>
@@ -38,7 +68,7 @@
 						</select>
 					</div>
 					<div class="form__group field">
-						<textarea class="form__field" placeholder="Message" name="message" id='message' required></textarea>
+						<textarea class="form__field" placeholder="Message" name="contact[message]" id='message' required></textarea>
 						<label for="message" class="form__label">Message</label>
 					</div>
 				</div>
@@ -46,7 +76,7 @@
 					<input type="checkbox">
 					<span>J'aimerais reçevoir la newsletter.</span>
 				</div>
-				<button class="btn btn-black">
+				<button class="btn btn-black" type="submit">
 					Envoyer</button>
 			</div>
 		</form>

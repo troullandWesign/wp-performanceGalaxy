@@ -5,6 +5,7 @@
 		<main class="view {{ body_class }}" data-barba="container" data-barba-namespace="home" data-scroll-container>
 			{% set entry = page.get_field('entry') %}
 			{% include "banner.twig" with { entry: entry } %}
+			{% include "rassurance.twig" %}
 			{% set about = page.get_field('about') %}
 			{% include "about.twig" with { about: about }  %}
 			{% set offre = page.get_field('offre') %}

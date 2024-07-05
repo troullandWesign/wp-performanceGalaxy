@@ -10,7 +10,7 @@
 		<div class="news-grid wrapper">
 			{% for index, post in posts %}
 
-				<a href="{{ post.permalink }}" title="{{ post.post_title }}" class="card _{{index+1}}">
+				<a href="{{ post.permalink }}" title="{{ post.post_title }}" class="card _{{index+1}}" style="background-image: url('{{post.thumbnail}}');">
 					<div class="content">
 						<div class="text">
 							<h3 tabindex="0">{{ post.post_title|nop }}</h3>
