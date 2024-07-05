@@ -39,8 +39,17 @@
 				<nav class="site-nav">
 					<ul>
 						{% for item in menu_main.items %}
-							<li>
-								<a href="{{ item.url }}">{{ item.name }}</a>
+							<li class="{{item.children ? 'dropdown' : ''}}">
+								<a href="{{ item.url }}" >{{ item.name }}</a>
+								{% if item.children %}
+								
+								{# subitem with dropdown #}
+									<ul>
+										{% for subitem in item.children %}
+											<li><a href="{{ subitem.url }}">{{ subitem.name }}</a></li>
+										{% endfor %}
+									</ul>
+								{% endif %}
 							</li>
 						{% endfor %}
 						{# <li><a href="#">Nos services</a></li>
