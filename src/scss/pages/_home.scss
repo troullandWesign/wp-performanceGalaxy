@@ -111,9 +111,9 @@ section.banner {
             }
 
             p {
-                @include fluid-size(1rem, 1.3rem, 1200px, 1920px);
+                font-size: 1.3rem;
                 font-family: $font-secondary;
-                margin: 2rem 0;
+                margin: 2rem 0 0 40px;
             }
         }
 
@@ -326,10 +326,13 @@ section.about {
             .title-small {
                 margin-bottom: 30px;
             }
+
             .content {
                 margin-bottom: 40px;
+
                 p {
                     margin-bottom: 20px;
+
                     &:last-of-type {
                         margin-bottom: 0;
                     }
@@ -476,7 +479,7 @@ section.abonnements {
                                 * {
                                     color: #4f8ae0;
                                 }
-                                
+
                             }
                         }
                     }
@@ -519,6 +522,7 @@ section.abonnements {
                 &:nth-child(3) {
                     border: 1px solid #ffea92;
                     background-color: rgba(26, 26, 26, 0.9);
+
                     .top {
                         * {
                             color: #ffea92;
