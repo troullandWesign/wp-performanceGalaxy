@@ -9,7 +9,8 @@
 		</div>
 		<div class="news-grid wrapper">
 			{% for index, post in posts %}
-
+				{% if index < 4 %}
+	
 				<a href="{{ post.permalink }}" title="{{ post.post_title }}" class="card _{{index+1}}">
 					<div class="content">
 						<div class="text">
@@ -26,6 +27,7 @@
 						</div>
 					</div>
 				</a>
+				{% endif %}
 			{% endfor %}
 
 		</div>
