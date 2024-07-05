@@ -13,14 +13,14 @@ class offres {
 			initialSlide: 1,
 			slidesPerView: "auto",
 			coverflowEffect: {
-			  rotate: 0,
-			  stretch: 0,
-			  depth: 150,
-			  modifier: 2.5,
-			  slideShadows: true,
-			},		  
-		  });
-		
+				rotate: 0,
+				stretch: 0,
+				depth: 150,
+				modifier: 2.5,
+				slideShadows: true,
+			},
+		});
+
 	};
 }
 
