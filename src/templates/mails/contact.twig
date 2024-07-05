@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+	{% include "mails/contact_head.twig" %}
+	<body>
+		<span class="preheader">{{ form.message|excerpt(15) }}</span>
+		<table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+			<tr>
+				<td>&nbsp;</td>
+				<td class="container">
+					<div class="content">
+						<table role="presentation" class="main">
+							<tr>
+								<td class="wrapper">
+									<table role="presentation" border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td>
+												{% if to == 'owner' %}
+													<h1 style="margin-bottom: 25px">Demande de contact</h1>
+													<div style="margin-bottom: 25px">
+														<div style="line-height: 20px"><strong>Envoyé par:</strong> {{form.firstname}} {{form.lastname}} - <a href="mailto:{{ form.email }}">{{ form.email }}</a></div>
+														<div style="line-height: 20px">
+															<strong>Téléphone:</strong> 
+															{{ form.tel is not empty ? "<a href='tel:" ~ form.tel ~ "'>" ~ form.tel ~ "</a>" : '<i>non renseigné</i>' }} 
+														</div>
+														
+													</div>
+													<div>
+														<div style="line-height: 20px"><strong>Civilité:</strong>{{ form.civilite}}</div>
+														<div style="line-height: 20px"><strong>Fonction:</strong>{{ form.fonction}}</div>
+														<div style="line-height: 20px"><strong>Etablissement:</strong>{{ form.etablissement}}</div>
+														<div style="line-height: 20px"><strong>Numéro de FINESS:</strong>{{ form.finess}}</div>
+														<div style="line-height: 20px"><strong>Adresse:</strong>{{form.adresse}},{{form.ville}} {{form.cp}}</div>
+														<div style="line-height: 20px"><strong>Zone géographique:</strong>{{form.zg}}</div>
+														<div style="line-height: 20px"><strong>Email:</strong>{{form.email}}</div>
+														<div style="line-height: 20px"><strong>Objet:</strong>{{form.subject}}</div>
+													</div>
+													<div style="line-height: 20px"><strong>Message:</strong></div>
+													<p>{{ form.message|nl2br }}</p>
+													<div style="margin-top: 15px"><i style="color: rgb(200,200,200); font-size: 10px">Envoyé le {{ fn('current_time', 'timestamp')|date("j F \\à H:i") }}</i></div>
+												{% else %}
+													<h1 style="margin-bottom: 25px">Demande de contact - PRATICIMA</h1>
+													<p>Votre demande de contact a bien été transmise à nos services, voici les informations que nous avons reçues :</p>
+													<div style="margin-bottom: 25px">
+														<div style="line-height: 20px"><strong>Vous êtes:</strong> {{form.firstname}} {{form.lastname}} - {{ form.email }}</div>
+														<div style="line-height: 20px">
+															<strong>Votre numéro de téléphone:</strong> 
+															{{ form.tel is not empty ? "<a href='tel:" ~ form.tel ~ "'>" ~ form.tel ~ "</a>" : '<i>non renseigné</i>' }} 
+														</div>
+													</div>
+													<div>
+														<div style="line-height: 20px"><strong>Civilité:</strong>{{ form.civilite}}</div>
+														<div style="line-height: 20px"><strong>Fonction:</strong>{{ form.fonction}}</div>
+														<div style="line-height: 20px"><strong>Etablissement:</strong>{{ form.etablissement}}</div>
+														<div style="line-height: 20px"><strong>Numéro de FINESS:</strong>{{ form.finess}}</div>
+														<div style="line-height: 20px"><strong>Adresse:</strong>{{form.adresse}},{{form.ville}} {{form.cp}}</div>
+														<div style="line-height: 20px"><strong>Zone géographique:</strong>{{form.zg}}</div>
+														<div style="line-height: 20px"><strong>Email:</strong>{{form.email}}</div>
+														<div style="line-height: 20px"><strong>Objet:</strong>{{form.subject}}</div>
+													</div>
+													<div style="line-height: 20px"><strong>Votre message:</strong></div>
+													<p>{{ form.message|nl2br }}</p>
+													<div style="margin-top: 15px"><i style="color: rgb(200,200,200); font-size: 10px">Envoyé le {{ fn('current_time', 'timestamp')|date("j F \\à H:i") }}</i></div>
+												{% endif %}
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+	</body>
+</html>
