@@ -58,30 +58,23 @@
 							<div class="indicator"></div>
 						</div>
 						<div class="content">
-							<div>
-								<h2>Contenu Tab 1</h2>
-								<p>Voici le contenu du premier onglet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse potenti.</p>
-							</div>
-							<div>
-								<h2>Contenu Tab 2</h2>
-								<p>Le contenu du deuxième onglet est ici. Vivamus eu auctor ex. Ut imperdiet, nisi ut eleifend lobortis, sem turpis tempor orci, eget tincidunt nisi erat at purus.</p>
-							</div>
-							<div>
-								<h2>Contenu Tab 3</h2>
-								<p>Et voici le contenu du troisième onglet. Nullam nec nisi dui. Etiam faucibus ipsum in arcu malesuada, vitae feugiat felis scelerisque.</p>
-							</div>
+							{% set tabs = page.get_field('tabs') %}
+							{% for item in tabs %}
+								<div>
+									{{item.text}}
+								</div>
+							{% endfor %}
+						
 						</div>
 					</div>
 					{% include "rassurance.twig" %}
+					{% set seo = page.get_field('seo') %}
 					<div class="read-more-section">
 						<div class="title-medium">
-							<h3>Titre de la section</h3>
+							<h3>{{seo.title}}</h3>
 						</div>
 						<input type="checkbox" id="read-more-check">
-						<p class="read-more-text">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-														Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>
+						{{seo.content}}
 						<label for="read-more-check" class="read-more-button btn btn-black"></label>
 					</div>
 				</div>
