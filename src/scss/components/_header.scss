@@ -22,6 +22,7 @@
     font-weight: 700;
     color: $color-secondary;
     text-decoration: none;
+
     img {
         width: 100px;
     }
@@ -32,6 +33,64 @@
         display: flex;
         list-style: none;
         gap: 3rem;
+        background: white;
+        transition: all 0.5s ease;
+    }
+
+
+    .dropdown::before {
+        content: "";
+        position: absolute;
+        right: -10px;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-top-color: #000; // Replace with the actual color for the arrow
+        background: white;
+        transform: translateY(-50%);
+        pointer-events: none;
+
+        // top: 55%;
+        rotate: 180deg;
+        transition: all 0.3s;
+    }
+
+    .dropdown:hover::before {
+        top: 55%;
+        rotate: 0deg;
+    }
+
+
+
+    ul li ul {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        transition: all 0.5s ease;
+        // margin-top: 1rem;
+        left: 0;
+        display: none;
+    }
+
+    ul li:hover>ul,
+    ul li ul:hover {
+        visibility: visible;
+        padding: 20px;
+        opacity: 1;
+        flex-direction: column;
+        gap: 10px;
+        display: flex;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+
+    ul li ul li {
+        clear: both;
+        width: 100%;
+    }
+
+    li {
+        position: relative;
+        padding: 0 10px;
     }
 
     a {
