@@ -34,10 +34,10 @@ class AjaxRequests extends AbstractController
 
         //Send to website owner
         $html = Timber::compile('mails/contact.twig', ['form' => $_POST['contact'], 'to' => 'owner']);
-        if (wp_mail([$email], "Demande de contact depuis votre site web", $html)) {
+        if (wp_mail([$email], "Demande de contact depuis Performance Galaxy web", $html)) {
             //Send confirmation to user
             $html = Timber::compile('mails/contact.twig', ['form' => $_POST['contact'], 'to' => 'user']);
-            wp_mail($_POST['contact']['email'], "PRATICIMA - Votre demande de contact a bien été transmise", $html);
+            wp_mail($_POST['contact']['email'], "Performance Galaxy - Votre demande de contact a bien été transmise", $html);
 
             wp_send_json(['status' => 'success', 'message' => __('Votre demande a bien été transmise', 'ws-starter')]);
             wp_die();
