@@ -11,6 +11,8 @@ Swiper.use([Navigation, Pagination])
 import LocomotiveScroll from 'locomotive-scroll';
 //const locomotiveScroll = new LocomotiveScroll();
 
+import FormManager from '../components/FormManager'
+
 /*Components*/
 
 
@@ -133,6 +135,8 @@ class Spa {
         //Animations.global()
         //etc.
 
+        FormManager.initForms()
+
         //Call functions
         
     }
@@ -157,7 +161,7 @@ class Spa {
                 
             }
         }
-        
+        FormManager.initForms()
         pageInit()
 
     }

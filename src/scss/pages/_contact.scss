@@ -29,16 +29,16 @@ section.contact {
     }
 
     form {
-        width: 80%;
         border-radius: 54px;
         padding: 20px 50px;
         border: 1px solid $light;
-        display: grid;
+        display: flex;
         grid-template-columns: 47.5% 1fr 47.5%;
         gap: 40px;
         align-items: center;
         background: white;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        position: relative;
 
         .left {
             display: flex;
